@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Base de Datos | OVI. Vinculación de BD a una página con PHP </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.1 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={previous:"Anterior",next:"Siguiente",show:"Mostrar",hide:"Ocultar",showFeedback:"Mostrar retroalimentación",hideFeedback:"Ocultar retroalimentación",correct:"Correcto",incorrect:"Incorrecto",menu:"Menú",print:"Imprimir"}</script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" ><div id="headerContent">OVI. Vinculación de BD a una página con PHP</div></div>
+<div id="siteNav">
+
+  <li id="active"><a href="index.html" class="active daddy main-node">Inicio</a></li>  
+   <li><a href="introduccion.html" class="daddy">Introduccion</a>  
+   
+   </li>
+   <li><a href="Herramientasautil.html" class="daddy">Herramientas a Utilizar</a>
+   <ul class="other-section">
+      <li><a href="Herramienta_xampp.html" class="no-ch">Herramienta Xampp</a></li>
+      <li><a href="vdeo_instalacin_xampp.html" class="no-ch">Vídeo Instalación Xampp</a></li>
+      <li><a href="Herramienta_sublime.html" class="no-ch">Herramienta Sublime Text</a></li>
+      <li><a href="Herramientas_alternas.html" class="no-ch">Herramientas alternas</a></li>
+   </ul>
+   </li>
+
+      <li><a href="Basedatos.html" class="daddy">Base de Datos</a>
+   <ul class="other-section">
+      <li><a href="Basedatos_mysql.html" class="no-ch">Base de Datos MySql</a></li>
+      <li><a href="vdeo_instalacin_xampp.html" class="no-ch">Creacion de DB MySql</a></li>
+      <li><a href="Basedatos_video.html" class="no-ch">Video Consultas Mysql</a></li>
+   </ul>
+   </li>
+</ul>
+
+ <li><a  href="Conexion_Php_Mysql.html" class="daddy">Conexion PHP-Mysql</a>
+         <ul class="other-section">
+      <li><a href="cod_conexion.html" class="no-ch">Codigo de Conexion</a></li>
+      <li><a href="cod_consultar.html" class="no-ch">Codigo para Consultas</a></li>
+      <li><a href="cod_registrar.html" class="no-ch">Codigo para Insertar</a></li>
+      <li><a href="cod_actualizar.html" class="no-ch">Codigo para Actualizar</a></li>
+     <li><a href="cod_eliminar.html" class="no-ch">Codigo para Eliminar</a></li>
+   </ul>   </li>
+</ul>
+
+
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="Herramientasautil.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="Basedatos_mysql.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">CODIGO PARA MODIFICAR UN REGISTRO</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id2">
+<div class="iDevice emphasis0">
+<div id="ta2_85" class="block iDevice_content">
+<p>A continuacion se intenta exponer mediante el siguiente codigo como realizar una actualizacion a los registros de una tabla, este contenido y se explica igualmente mediante un video tutorial.
+
+<p>Codigo del Archivo Conexion</p>
+<pre class="fondocodigo">
+    
+       &lt;?php 
+       $con=mysql_connect('localhost','root','');
+       mysql_select_db("estudiantes");
+       ?&gt;
+        
+</pre>
+
+<p>Codigo del Archivo Para Actualizar Datos</p>
+<pre class="fondocodigo">
+    
+    
+    &lt;html&gt; 
+        &lt;?php include"conexion.php" ?&gt;
+
+    &lt;head&gt; 
+       &lt;title&gt;Insertar Datos php y MySql &lt;title&gt; 
+    &lt;/head&gt; 
+    
+    &lt;body&gt; 
+      
+    &lt;form action="" method="post"&gt; 
+ 
+    Id:&lt;input  name="id"&gt;&lt;/head&gt;&lt;br /&gt; 
+    &lt;input type="submit" &gt;
+    &lt;/form&gt;
+
+        &lt;?php  
+
+        if($_POST){
+        $id=$_POST["id"];
+        $result=mysql_query("update tb_alumnos set nombre='$nom' where id='$id'");    
+
+        echo ":&lt;h2&gt;MODIFICADO:&lt;/h2&gt;";
+
+  }
+         ?&gt;
+
+    &lt;/body&gt; 
+    &lt;/html&gt;
+</pre>
+
+</pre>
+
+
+<p>Para interpretar de mejor manera el codigo anterior a continuacion se presenta el video explicando paso a paso el proceso de Actualizacion </p>
+<br /> <iframe width="800" height="600" style="display: block; margin-left: auto; margin-right: auto;" src="https://www.youtube.com/embed/V1zgLJ5h8_o" frameborder="0" allowfullscreen=""></iframe></p>
+<p style="text-align: justify;"><span> Copyright[Jhorman Jair Castillo]. (2017, mayo 30). [Archivo de video]. Recuperado de <a href="https://www.youtube.com/embed/V1zgLJ5h8_o">https://www.youtube.com/embed/V1zgLJ5h8_o</a></span></p>
+<p style="text-align: justify;"></p>
+
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="Basedatos_video.html">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id="siteFooter"> <img src="https://informacion.unad.edu.co/images/acerca%20de%20la%20unad/simbolos/logo_vertical.png" align="right"><br><br><br>Desarrollado por: Grupo 301122-14 del curso Diseño de Sitios Web<br>
+UNIVERSIDAD NACIONAL ABIERTA Y A DISTANCIA (UNAD)<br>
+<br>
+<div class="homeRedes">
+<a title="Síguenos en Twitter como @universidadUNAD" href="http://twitter.com/UniversidadUNAD">
+<img alt="Twitter" src="https://www.asturnatura.com/images/social-icons/twitter40x40.png" /></a>
+<a title="Suscribete a nuestro canal en Youtube" href="http://www.youtube.com/universidadunad">
+<img alt="Youtube"  src="https://www.holocaustremembrance.com/sites/default/files/youtube-ihra.png" /></a>
+<a title="Únete a nuestra comunidad en Facebook" href="https://www.facebook.com/UniversidadUNAD">
+<img alt="Facebook"  src="https://survley.com/assets/img/fb-logo.png" /></a>
+<a title="Únete a FlickR" href="https://www.flickr.com/photos/universidadunad"><img alt="FlickR"  src="http://www.sassuolocalcio.it/assets/images/buttons/flickr.jpg" /></a>
+</div>
+
+<!--<h1>Universidad Nacional Abierta y a Distancia</h1>-->
+
+
+<div id="siteFooter"Universidad Nacional Abierta y a Distancia UNAD - (2017)  </div></div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>
